@@ -233,5 +233,5 @@ def predict(file, mod):
         shutil.rmtree(os.path.join(path_src, 'prediction'))
     opt['project'] = path_src
     opt['name'] = 'prediction'
-    opt['weights'] = os.path.join(path_this, 'run/models/'+mod+'.pt')
+    opt['weights'] = os.path.join(path_this,'..', 'model'+mod+'.pt')
     run(**opt)
