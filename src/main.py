@@ -18,8 +18,9 @@ if mulai and upload_file:
     if(os.path.exists(dir_img)):
         shutil.rmtree(dir_img)
         os.mkdir(dir_img)
-    
-    
+    else:
+        os.mkdir(dir_img)
+        
     with open(os.path.join(path_this, "uploads", upload_file.name),"wb") as f:
         f.write(upload_file.read())
     st.header("Gambar awal")
