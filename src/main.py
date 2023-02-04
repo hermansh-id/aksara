@@ -25,7 +25,7 @@ if mulai and upload_file:
         f.write(upload_file.read())
     st.header("Gambar awal")
     st.image(upload_file)
-    predict("uploads/"+upload_file.name, "jawa")
+    predict(os.path.join(path_this, 'prediction', upload_file.name), "jawa")
     st.header("Gambar di prediksi")
     image = Image.open(os.path.join(path_this, 'prediction', upload_file.name))
     st.image(image)
