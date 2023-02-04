@@ -231,6 +231,8 @@ def predict(file, mod):
     opt['source'] = file
     if(os.path.exists(os.path.join(path_src, 'prediction'))):
         shutil.rmtree(os.path.join(path_src, 'prediction'))
+    else:
+        os.mkdir(os.path.join(path_src, 'prediction'))
     opt['project'] = path_src
     opt['name'] = 'prediction'
     opt['weights'] = os.path.join(path_this,'..', 'model', mod+'.pt')
