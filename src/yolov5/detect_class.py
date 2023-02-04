@@ -229,10 +229,12 @@ def parse_opt():
 def predict(file, mod):
     opt = vars(parse_opt())
     opt['source'] = file
-    if(os.path.exists(os.path.join(path_src, 'prediction'))):
-        shutil.rmtree(os.path.join(path_src, 'prediction'))
+    path_pred = os.path.join(path_src, 'prediction')
+    print(path_pred)
+    if(os.path.exists(path_pred)):
+        shutil.rmtree(path_pred)
     else:
-        os.mkdir(os.path.join(path_src, 'prediction'))
+        os.mkdir(path_pred)
     opt['project'] = path_src
     opt['name'] = 'prediction'
     opt['weights'] = os.path.join(path_this,'..', 'model', mod+'.pt')
