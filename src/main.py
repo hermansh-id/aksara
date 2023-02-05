@@ -1,3 +1,9 @@
+path_this = os.path.abspath(os.path.dirname(__file__))
+path_root = os.path.abspath(os.path.join(path_this, ".."))
+path_yolov5 = os.path.abspath(os.path.join(path_this, "yolov5"))
+sys.path.extend([path_this,path_root, path_yolov5])
+
+
 from yolov5.detect_class import Detection
 import streamlit as st
 import os
