@@ -20,7 +20,7 @@ engine = load_engine()
 st.title("Object Detection for Aksara")
 
 mode = st.selectbox("Pilih aksara", ["jawa"])
-upload_file = st.file_uploader("Pilih gambar", type=["png", "jpg"])
+upload_file = st.file_uploader("Pilih gambar", type=["png", "jpg", "jpeg"])
 mulai = st.button("Prediksi")
 
 if mulai and upload_file:
