@@ -1,4 +1,4 @@
-from yolov5.detect_class import YOLO
+from yolov5.detect_class import Detection
 import streamlit as st
 import os
 from PIL import Image
@@ -6,7 +6,7 @@ import shutil
 
 @st.cache(allow_output_mutation=True)
 def load_engine():
-    engine = YOLO()
+    engine = Detection()
     return engine
 
 engine = load_engine()

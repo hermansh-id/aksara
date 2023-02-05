@@ -24,7 +24,7 @@ path_yolov5 = os.path.abspath(os.path.join(path_src, "yolov5"))
 path_services = os.path.abspath(os.path.join(path_src, "services"))
 sys.path.extend([path_this,path_src,path_yolov5,path_services,path_root])
 
-class YOLO:
+class Detection:
     def __init__(self):
         imgsz=(640, 640)
         data=ROOT / 'data/coco128.yaml'
