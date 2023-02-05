@@ -1,8 +1,15 @@
-from yolov5.detect_class import predict
+from yolov5.detect_class import YOLO
 import streamlit as st
 import os
 from PIL import Image
 import shutil
+
+@st.cache(allow_output_mutation=True)
+def load_engine():
+    engine = YOLO()
+    return engine
+
+engine = load_engine()
 
 st.title("Object Detection for Aksara")
 
@@ -25,7 +32,7 @@ if mulai and upload_file:
         f.write(upload_file.read())
     st.header("Gambar awal")
     st.image(upload_file)
-    predict(os.path.join(path_this, 'uploads', upload_file.name), "jawa")
+    engine.run(os.path.join(path_this, 'uploads', upload_file.name))
     st.header("Gambar di prediksi")
     image = Image.open(os.path.join(path_this, 'prediction', upload_file.name))
     st.image(image)
